@@ -104,3 +104,37 @@ set_property IOSTANDARD LVCMOS33 [get_ports {disp_an_o[7]}]
 # System Clock, 100MHz
 set_property PACKAGE_PIN E3 [get_ports clk]
 set_property IOSTANDARD LVCMOS33 [get_ports clk]
+
+# LD16 RGB LED Signals
+set_property PACKAGE_PIN N15 [get_ports rgb1_red_o]
+set_property IOSTANDARD LVCMOS33 [get_ports rgb1_red_o]
+set_property PACKAGE_PIN M16 [get_ports rgb1_green_o]
+set_property IOSTANDARD LVCMOS33 [get_ports rgb1_green_o]
+set_property PACKAGE_PIN R12 [get_ports rgb1_blue_o]
+set_property IOSTANDARD LVCMOS33 [get_ports rgb1_blue_o]
+# LD17 RGB LED Signals
+set_property PACKAGE_PIN N16 [get_ports rgb2_red_o]
+set_property IOSTANDARD LVCMOS33 [get_ports rgb2_red_o]
+set_property PACKAGE_PIN R11 [get_ports rgb2_green_o]
+set_property IOSTANDARD LVCMOS33 [get_ports rgb2_green_o]
+set_property PACKAGE_PIN G14 [get_ports rgb2_blue_o]
+set_property IOSTANDARD LVCMOS33 [get_ports rgb2_blue_o]
+
+
+set_property PACKAGE_PIN C17 [get_ports {keypad_x[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {keypad_x[3]}]
+set_property PACKAGE_PIN D18 [get_ports {keypad_x[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {keypad_x[2]}]
+set_property PACKAGE_PIN E18 [get_ports {keypad_x[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {keypad_x[1]}]
+set_property PACKAGE_PIN G17 [get_ports {keypad_x[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {keypad_x[0]}]
+
+set_property PACKAGE_PIN D17 [get_ports {keypad_y[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {keypad_y[3]}]
+set_property PACKAGE_PIN E17 [get_ports {keypad_y[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {keypad_y[2]}]
+set_property PACKAGE_PIN F18 [get_ports {keypad_y[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {keypad_y[1]}]
+set_property PACKAGE_PIN G18 [get_ports {keypad_y[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {keypad_y[0]}]
