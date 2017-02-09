@@ -27,12 +27,16 @@ module keypad(
 	output reg [15:0]data
     );
 	reg [3:0]cnt;
+	initial begin
+		cnt = 1'b0;
+		data = 1'b0;
+		x = 1'b0;
+	end
 	always @(posedge clk) begin
-		x =4'b0;
 		x[cnt[3:2]] = 1'b1;
-		data = 16'b0;
+		// data = 16'b0;
 		data[cnt] = y[cnt[1:0]];
-
+		x =4'b0;
 		cnt = cnt + 1;
 	end
 endmodule
