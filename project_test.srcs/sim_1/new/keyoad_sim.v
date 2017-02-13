@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 02/07/2017 04:18:42 PM
+// Create Date: 02/13/2017 05:30:20 PM
 // Design Name: 
-// Module Name: keypad
+// Module Name: keyoad_sim
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -19,23 +19,28 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-  
-module keypad(
-	input clk,
-	output reg [3:0]x,
-	input [3:0]y,
-	output reg [15:0]data
+
+module keyoad_sim(
     );
-	reg [3:0]cnt;
-	initial begin
-		cnt = 4'hF;
-		data = 16'b0;
-		x = 4'b1;
-	end
-	always @(posedge clk) begin
-		x[cnt[3:2]] = 1'b1;
-		cnt = cnt + 1;
-		x[cnt[3:2]] = 1'b0;
-		data[cnt] = ~y[cnt[1:0]];
-	end
+    
+    reg clk;
+    reg [3:0] y;
+    initial begin
+        clk = 0;
+        y = 4'b0;
+    end
+    always #1 clk = ~clk;
+//    always #3 y = y + 1;
+    
+    
+    
+    wire [3:0]x;
+    wire [15:0]data;
+    
+    keypad k1 (
+    .clk(clk),
+    .x(x),
+    .y(y),
+    .data(data)
+    );
 endmodule

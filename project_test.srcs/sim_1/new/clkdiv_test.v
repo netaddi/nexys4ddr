@@ -21,6 +21,16 @@
 
 
 module clkdiv_test(
-
     );
+    
+    reg clk = 0;
+    always #1 clk = ~clk;
+    
+    wire out;
+    
+    clk_div div1 (
+    .clk_in(clk),
+    .level(32'h3F),
+    .clk_out(out));
+    
 endmodule

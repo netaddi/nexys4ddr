@@ -25,8 +25,14 @@ module clk_div(
 	input [31:0]level,
 	output reg clk_out
     );
-
-	reg[31:0] cnt;
+    
+    reg[31:0] cnt;
+    
+    initial begin
+        clk_out = 0;
+        cnt = 0;
+    end
+    
 	always @(posedge clk_in ) begin
 		cnt = cnt + 1'b1;
 		if (cnt >= level) begin

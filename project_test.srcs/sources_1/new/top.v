@@ -45,7 +45,7 @@ module switch_led(
         num = 0;
     end
     
-    assign led[15:0] = SW[15:0];
+    // assign led[15:0] = SW[15:0];
     
     clk_div clk16(
         .clk_in(clk),
@@ -89,11 +89,12 @@ module switch_led(
     	.din(led_din),
     	.cs(led_cs)
     	);
-    // keypad k1(
-    //     .clk(clk_16),
-    //     .x(keypad_x),
-    //     .y(keypad_y),
-    //     .data(led)
-    //     );
+    
+    keypad k1(
+        .clk(clk_16),
+        .x(keypad_x),
+        .y(keypad_y),
+        .data(led)
+        );
 
 endmodule
