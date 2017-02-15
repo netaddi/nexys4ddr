@@ -23,8 +23,6 @@
 module switch_led(
     input [15:0] SW,
     input clk,
-    output [3:0] keypad_x,
-    input [3:0] keypad_y,
     output [15:0] led,
     output [7:0] disp_seg_o,
     output [7:0] disp_an_o,
@@ -33,10 +31,7 @@ module switch_led(
     output rgb1_green_o,
     output rgb2_red_o,
     output rgb2_blue_o,
-    output rgb2_green_o,
-    output led_clk,
-    output led_din,
-    output led_cs
+    output rgb2_green_o
     );
 
     reg [31:0]num;
@@ -74,27 +69,15 @@ module switch_led(
 
     rgbled led2(
         .clk(clk),
+        // .red({SW[3:0], 4'b0}),
+        // .green({SW[7:4], 4'b0}),
+        // .blue({SW[11:8], 4'b0}),
         .red(SW[3:0]),
         .green(SW[7:4]),
         .blue(SW[11:8]),
         .led_r(rgb2_red_o),
         .led_g(rgb2_green_o),
         .led_b(rgb2_blue_o)
-        );
-
-    led_array_drv la1 (
-    	.clk(clk),
-    	.clk_out(led_clk),
-    	.data(SW[15:0]),
-    	.din(led_din),
-    	.cs(led_cs)
-    	);
-    
-    keypad k1(
-        .clk(clk_16),
-        .x(keypad_x),
-        .y(keypad_y),
-        .data(led)
         );
 
 endmodule

@@ -139,9 +139,10 @@ set_property IOSTANDARD LVCMOS33 [get_ports {keypad_y[1]}]
 set_property PACKAGE_PIN G18 [get_ports {keypad_y[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {keypad_y[0]}]
 
-set_property PACKAGE_PIN D14 [get_ports led_clk] #jb1
+set_property PACKAGE_PIN D14 [get_ports led_clk] 
 set_property IOSTANDARD LVCMOS33 [get_ports led_clk]
-set_property PACKAGE_PIN F16 [get_ports led_cs] #jb2
+set_property PACKAGE_PIN F16 [get_ports led_cs] 
 set_property IOSTANDARD LVCMOS33 [get_ports led_cs]
-set_property PACKAGE_PIN G16 [get_ports led_din] #jb3
+set_property PACKAGE_PIN G16 [get_ports led_din]
 set_property IOSTANDARD LVCMOS33 [get_ports led_din]
+#jb1-jb3
